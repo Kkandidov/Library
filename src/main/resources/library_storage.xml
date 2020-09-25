@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<library>
+    <books>
+        <book id="1" name="Good Book" isbn="978-45-12" date="1920-01-03">
+            <authors>
+                <author id="1" name="Ivan" surname="Ivanov"/>
+                <author id="2" name="Petr" surname="Petrov"/>
+            </authors>
+            <genres>
+                <genre id="1" name="Fiction"/>
+                <genre id="2" name="Fantastic"/>
+            </genres>
+        </book>
+        <book id="1" name="Better Book" isbn="567-46-58" date="1923-05-09">
+            <authors>
+                <author id="3" name="Nikolay" surname="Nikolaev"/>
+            </authors>
+            <genres>
+                <genre id="3" name="Fiction"/>
+                <genre id="4" name="Fantastic"/>
+            </genres>
+        </book>
+        <book id="3" name="The Best Book" isbn="" date="1789-06-08">
+            <authors>
+                <author id="4" name="konstantin" surname="Konstantinov"/>
+                <author id="5" name="Evgeny" surname="Evgenev"/>
+                <author id="6" name="Kiril" surname="kirilov"/>
+            </authors>
+            <genres>
+                <genre id="5" name="Science Fiction"/>
+            </genres>
+        </book>
+    </books>
+</library>
