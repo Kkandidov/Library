@@ -1,4 +1,7 @@
 package org.astashonok.library.service.api;
 
-public interface GenreService {
+import org.astashonok.library.model.Genre;
+import org.astashonok.library.service.abstracts.EntityService;
+
+public interface GenreService extends EntityService<Genre> {
 }

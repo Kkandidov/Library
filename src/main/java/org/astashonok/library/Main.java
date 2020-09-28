@@ -4,6 +4,7 @@ package org.astashonok.library;
         import org.astashonok.library.model.Book;
         import org.astashonok.library.model.Genre;
         import org.astashonok.library.model.Library;
+        import org.astashonok.library.repository.impl.BookRepositoryImpl;
         import org.astashonok.library.util.JAXBLibrarySerializer;
         import org.astashonok.library.util.pool.ConnectionPool;
         import org.astashonok.library.util.pool.DBCPPool;
@@ -81,13 +82,19 @@ public class Main {
 //        Library library = Library.builder()
 //                .books(Arrays.asList(book1, book2))
 //                .build();
-//        JAXBLibrarySerializer.marshal(library, "D:/Library/src/main/resources/storage.xml");
+//        JAXBLibrarySerializer.marshal(library, "D:/Library/src/main/resources/library_storage.xml");
 
         ConnectionPool cp = Pools.newPool(DBCPPool.class);
-        for (int i=0; i<100; i++) {
-            Connection connection = cp.getConnection();
-            System.out.println(i + " " + connection);
-            connection.close();
-        }
+//        for (int i=0; i<100; i++) {
+//            try(Connection connection = cp.getConnection()){
+//                System.out.println(i + " " + connection);
+//            }
+//        }
+
+                Library library = Library.builder()
+                .books(new BookRepositoryImpl().getAll())
+                .build();
+        JAXBLibrarySerializer.marshal(library, "D:/Library/src/main/resources/library_storage.xml");
+
     }
 }

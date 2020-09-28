@@ -1,33 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <library>
     <books>
-        <book id="1" name="Good Book" isbn="978-45-12" date="1920-01-03">
+        <book name="Watchmen" isbn="453-56-18" date="2011-01-12" id="1">
             <authors>
-                <author id="1" name="Ivan" surname="Ivanov"/>
-                <author id="2" name="Petr" surname="Petrov"/>
+                <author name="William" surname="Shakespeare" id="1"/>
+                <author name="Agatha" surname="Christie" id="2"/>
+                <author name="Barbara" surname="Cartland" id="3"/>
             </authors>
             <genres>
-                <genre id="1" name="Fiction"/>
-                <genre id="2" name="Fantastic"/>
+                <genre name="Fantasy" id="1"/>
+                <genre name="Adventure" id="2"/>
             </genres>
         </book>
-        <book id="1" name="Better Book" isbn="567-46-58" date="1923-05-09">
+        <book name="The Walking Dead: Compendium One" isbn="354-76-78" date="1996-03-05" id="2">
             <authors>
-                <author id="3" name="Nikolay" surname="Nikolaev"/>
+                <author name="Agatha" surname="Christie" id="2"/>
             </authors>
             <genres>
-                <genre id="3" name="Fiction"/>
-                <genre id="4" name="Fantastic"/>
+                <genre name="Adventure" id="2"/>
             </genres>
         </book>
-        <book id="3" name="The Best Book" isbn="" date="1789-06-08">
+        <book name="The Boy, the Mole, the Fox and the Horse" isbn="23-54-123" date="1857-08-11" id="3">
             <authors>
-                <author id="4" name="konstantin" surname="Konstantinov"/>
-                <author id="5" name="Evgeny" surname="Evgenev"/>
-                <author id="6" name="Kiril" surname="kirilov"/>
+                <author name="Barbara" surname="Cartland" id="3"/>
+                <author name="William" surname="Shakespeare" id="1"/>
             </authors>
             <genres>
-                <genre id="5" name="Science Fiction"/>
+                <genre name="Romance" id="3"/>
+            </genres>
+        </book>
+        <book name="The Night Fire" isbn="8976-12-3" date="1997-02-07" id="4">
+            <authors>
+                <author name="Danielle" surname="Steel" id="4"/>
+            </authors>
+            <genres>
+                <genre name="Mystery" id="4"/>
+                <genre name="Fantasy" id="1"/>
+                <genre name="Adventure" id="2"/>
+            </genres>
+        </book>
+        <book name="And Then There Were None" isbn="321-654-78" date="1954-09-09" id="5">
+            <authors>
+                <author name="Harold" surname="Robbins" id="5"/>
+                <author name="Agatha" surname="Christie" id="2"/>
+            </authors>
+            <genres>
+                <genre name="Horror" id="5"/>
             </genres>
         </book>
     </books>

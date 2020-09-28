@@ -45,12 +45,13 @@ public class GenreRepositoryImpl implements GenreRepository {
     public Genre getById(long id) {
         String sql = "SELECT id, name FROM genre WHERE id = " + id;
         Genre genre = null;
-        try (PreparedStatement preparedStatement = getConnection().prepareStatement(sql);
+        try (Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(sql);
              ResultSet resultSet = preparedStatement.executeQuery()) {
             if (resultSet.next()) {
-                genre = new Genre();
-                genre.setId(resultSet.getLong("id"));
-                genre.setName(resultSet.getString("name"));
+                genre = Genre.builder()
+                        .id(resultSet.getLong("id"))
+                        .name(resultSet.getString("name"))
+                        .build();
              }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -66,9 +67,10 @@ public class GenreRepositoryImpl implements GenreRepository {
         try (Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(sql);
              ResultSet resultSet = preparedStatement.executeQuery()) {
             while (resultSet.next()) {
-                genre = new Genre();
-                genre.setId(resultSet.getLong("id"));
-                genre.setName(resultSet.getString("name"));
+                genre = Genre.builder()
+                        .id(resultSet.getLong("id"))
+                        .name(resultSet.getString("name"))
+                        .build();
                 genres.add(genre);
             }
         } catch (SQLException e) {

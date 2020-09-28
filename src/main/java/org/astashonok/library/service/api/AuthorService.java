@@ -1,4 +1,7 @@
 package org.astashonok.library.service.api;
 
-public interface AuthorService {
+import org.astashonok.library.model.Author;
+import org.astashonok.library.service.abstracts.EntityService;
+
+public interface AuthorService extends EntityService<Author> {
 }

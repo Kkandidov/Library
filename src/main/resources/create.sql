@@ -17,7 +17,8 @@ CREATE TABLE `genre`
     `id`   BIGINT       NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(100) NOT NULL,
 
-    CONSTRAINT `pk_genreId` PRIMARY KEY (`id`)
+    CONSTRAINT `pk_genreId` PRIMARY KEY (`id`),
+    UNIQUE (name)
 ) ENGINE = InnoDB;
 
 -- author table
@@ -27,7 +28,8 @@ CREATE TABLE `author`
     `name`    VARCHAR(100) NOT NULL,
     `surname` VARCHAR(100) NOT NULL,
 
-    CONSTRAINT `pk_authorId` PRIMARY KEY (`id`)
+    CONSTRAINT `pk_authorId` PRIMARY KEY (`id`),
+    UNIQUE (name, surname)
 ) ENGINE = InnoDB;
 
 -- book table

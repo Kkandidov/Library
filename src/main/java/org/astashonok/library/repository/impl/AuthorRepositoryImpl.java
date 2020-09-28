@@ -46,13 +46,14 @@ public class AuthorRepositoryImpl implements AuthorRepository {
     public Author getById(long id) {
         String sql = "SELECT id, name, surname FROM author WHERE id = " + id;
         Author author = null;
-        try (PreparedStatement preparedStatement = getConnection().prepareStatement(sql);
+        try (Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(sql);
              ResultSet resultSet = preparedStatement.executeQuery()) {
             if (resultSet.next()) {
-                author = new Author();
-                author.setId(resultSet.getLong("id"));
-                author.setName(resultSet.getString("name"));
-                author.setSurname(resultSet.getString("surname"));
+                author = Author.builder()
+                        .id(resultSet.getLong("id"))
+                        .name(resultSet.getString("name"))
+                        .surname(resultSet.getString("surname"))
+                        .build();
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -68,10 +69,11 @@ public class AuthorRepositoryImpl implements AuthorRepository {
         try (Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(sql);
              ResultSet resultSet = preparedStatement.executeQuery()) {
             while (resultSet.next()) {
-                author = new Author();
-                author.setId(resultSet.getLong("id"));
-                author.setName(resultSet.getString("name"));
-                author.setSurname(resultSet.getString("surname"));
+                author = Author.builder()
+                        .id(resultSet.getLong("id"))
+                        .name(resultSet.getString("name"))
+                        .surname(resultSet.getString("surname"))
+                        .build();
                 authors.add(author);
             }
         } catch (SQLException e) {
